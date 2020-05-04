@@ -1,6 +1,8 @@
 package Main;
 import java.util.ArrayList;
 
+import Main.Nodo;
+
 public class Arbol {
 	private Nodo raiz;
 	public void insertar(float clave) {
@@ -32,7 +34,7 @@ public class Arbol {
 			System.out.println("Ya se encuentra el valor : "+clave);
 		}
 		nuevo.altura = Math.max(altura(nuevo.izq),altura(nuevo.der))+1;
-		nuevo.bal = altura(nuevo.der)- altura(nuevo.izq);
+		
 		return nuevo;
 	
 	}
@@ -61,8 +63,13 @@ public class Arbol {
         k1.der = rotarizq( k1.der );
         return rotarder( k1 );
     }
+
 	private int altura( Nodo t ){
-        return t == null ? -1 : t.altura;
+		if (t==null) {
+			return -1;
+		} else {
+			return t.altura;
+		}
     }
 	
 	private int calcularAltura(Nodo actual ){
@@ -99,7 +106,6 @@ public class Arbol {
             }
         }
         nivel = 0;
-        int cont = 0;
 
         for (int i = 1; i < max; i++){
             if(i == Math.pow(2, nivel)){
@@ -107,11 +113,15 @@ public class Arbol {
                 nivel++;
             }
             if( arreglo[i] != null ){
+            	calbal(arreglo[i]);
                 System.out.print("[" + arreglo[i].clave +" : " + arreglo[i].bal + "]");
-                cont++;
+
             }
         }
     }
+	public void calbal(Nodo t) {
+		t.bal  = altura(t.der) - altura(t.izq);
+	}
 
 }
     

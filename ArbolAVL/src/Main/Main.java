@@ -5,6 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 
         Arbol nuevo = new Arbol();
+       
         nuevo.insertar(90);
         nuevo.insertar(38);
         nuevo.insertar(40);
