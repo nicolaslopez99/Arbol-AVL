@@ -29,8 +29,20 @@ public class Main {
         nuevo.insertar(128);
         nuevo.insertar(97);
         nuevo.insertar(99);
+
+        /*
+        nuevo.insertar(100);
+        nuevo.insertar(90);
+        nuevo.insertar(110);
+        nuevo.insertar(80);
+        nuevo.insertar(91);
+        nuevo.insertar(120);
+        nuevo.insertar(60);
+        nuevo.insertar(81);
+        nuevo.insertar(82);
+*/
         
-        nuevo.imprimirPorNiveles();
+        nuevo.imprimirPorNiveles(nuevo.retornarraiz());
 
 	}
 

@@ -5,6 +5,7 @@ public class Nodo {
 	public int altura;
 	public Nodo izq;
 	public Nodo der;
+	public int bal;
     public Nodo(float clave){
     	this( clave, null, null );
     }
@@ -12,6 +13,7 @@ public class Nodo {
         this.clave = clave;
         this.izq = izq;
         this.der = der;
-        altura   = 0;              
+        altura   = 0; 
+        bal = 0;
     }
 }
